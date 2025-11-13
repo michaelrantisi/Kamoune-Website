@@ -1,0 +1,22 @@
+{
+"home": "Accueil",
+"menu": "Menu",
+"catering": "Traiteur",
+"workshops": "Ateliers",
+"order": "Commander",
+"name": "Nom",
+"email": "Adresse e-mail",
+"phone": "Numéro de téléphone",
+"participants": "Nombre de participants",
+"attendedBefore": "Avez-vous déjà participé ?",
+"allergies": "Allergies ou intolérances ?",
+"confirmParticipation": "Je confirme ma participation (20 € / personne)",
+"confirmCancellation": "Je m’engage à prévenir en cas d’annulation",
+"submit": "Envoyer",
+"checkout": "Finaliser la commande",
+"payOnline": "Payer en ligne",
+"payInPerson": "Payer sur place",
+"total": "Total",
+"thankYouOrder": "Merci pour votre commande !",
+"thankYouWorkshop": "Merci pour votre inscription à l’atelier !"
+}

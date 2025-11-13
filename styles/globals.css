@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Global resets and brand styles */
+body {
+@apply font-sans bg-white text-gray-800;
+}
+a {
+@apply text-primary hover:underline;
+}
+button {
+@apply cursor-pointer;
+}

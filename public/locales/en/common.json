@@ -1,0 +1,22 @@
+{
+"home": "Home",
+"menu": "Menu",
+"catering": "Catering",
+"workshops": "Workshops",
+"order": "Order",
+"name": "Name",
+"email": "Email Address",
+"phone": "Phone Number",
+"participants": "Number of participants",
+"attendedBefore": "Have you attended before?",
+"allergies": "Allergies or dietary restrictions?",
+"confirmParticipation": "I confirm my participation (€20 per person)",
+"confirmCancellation": "I agree to notify in case of cancellation",
+"submit": "Submit",
+"checkout": "Checkout",
+"payOnline": "Pay online",
+"payInPerson": "Pay in person",
+"total": "Total",
+"thankYouOrder": "Thank you for your order!",
+"thankYouWorkshop": "Thank you for signing up for the workshop!"
+}
