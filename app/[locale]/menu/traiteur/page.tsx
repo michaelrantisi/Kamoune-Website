@@ -1,18 +1,23 @@
-"use client";
-
+// app/[locale]/menu/traiteur/page.tsx
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import menuData from "@/data/menuTraiteur";
 import MenuCard from "@/components/MenuCard";
 
-export default function MenuTraiteurPage() {
-  const { locale } = useParams<{ locale: "fr" | "en" }>();
+type Params = {
+  locale: "fr" | "en";
+};
+
+export default function MenuTraiteurPage({ params }: { params: Params }) {
+  const { locale } = params;
   const t = (fr: string, en: string) => (locale === "fr" ? fr : en);
 
   return (
-    <div className="max-w-5xl mx-auto p-6" suppressHydrationWarning>
+    <div className="max-w-5xl mx-auto p-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">{t("Menu Traiteur", "Catering Menu")}</h1>
+        <h1 className="text-3xl font-bold">
+          {t("Menu Traiteur", "Catering Menu")}
+        </h1>
+
         <Link
           href={`/${locale}`}
           className="text-sm border px-2 py-1 rounded"

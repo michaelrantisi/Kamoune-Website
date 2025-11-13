@@ -1,3 +1,4 @@
+// components/Navbar.js
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -10,7 +11,7 @@ export default function Navbar() {
   const { itemCount } = useContext(CartContext);
 
   const locale = pathname.split("/")[1] === "en" ? "en" : "fr";
-  const to = (path) => `/${locale}${path}`;
+  const to = (path) => `/${locale}${path}`;  // <-- no TypeScript here
 
   const toggleLanguage = () => {
     const nextLocale = locale === "fr" ? "en" : "fr";
@@ -21,10 +22,16 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href={`/${locale}`} className="text-xl font-bold text-primary">Kamoune</Link>
+        <Link href={`/${locale}`} className="text-xl font-bold text-primary">
+          Kamoune
+        </Link>
         <div className="flex items-center gap-5">
-          <Link href={to("/menu")} className="hover:underline">Menu</Link>
-          <Link href={to("/menu/traiteur")} className="hover:underline">Traiteur</Link>
+          <Link href={to("/menu")} className="hover:underline">
+            Menu
+          </Link>
+          <Link href={to("/menu/traiteur")} className="hover:underline">
+            Traiteur
+          </Link>
           <Link href={to("/workshop")} className="hover:underline">
             {locale === "fr" ? "Ateliers" : "Workshops"}
           </Link>

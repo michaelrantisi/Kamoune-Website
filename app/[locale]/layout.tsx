@@ -1,3 +1,4 @@
+// app/[locale]/layout.tsx
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartProvider from "@/context/CartContext";
