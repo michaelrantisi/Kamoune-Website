@@ -1,4 +1,3 @@
-// components/Navbar.js
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -11,7 +10,7 @@ export default function Navbar() {
   const { itemCount } = useContext(CartContext);
 
   const locale = pathname.split("/")[1] === "en" ? "en" : "fr";
-  const to = (path) => `/${locale}${path}`;  // <-- no TypeScript here
+  const to = (path) => `/${locale}${path}`;
 
   const toggleLanguage = () => {
     const nextLocale = locale === "fr" ? "en" : "fr";

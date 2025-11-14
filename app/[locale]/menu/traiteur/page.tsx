@@ -1,26 +1,35 @@
-// app/[locale]/menu/traiteur/page.tsx
+"use client";
+
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import menuData from "@/data/menuTraiteur";
 import MenuCard from "@/components/MenuCard";
 
-type Params = {
-  locale: "fr" | "en";
-};
+export default function MenuTraiteurPage() {
+  const params = useParams();
+  const locale = (params?.locale === "en" ? "en" : "fr") as "fr" | "en";
 
-export default function MenuTraiteurPage({ params }: { params: Params }) {
-  const { locale } = params;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   const t = (fr: string, en: string) => (locale === "fr" ? fr : en);
 
   return (
     <div className="max-w-5xl mx-auto p-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-4">
         <h1 className="text-3xl font-bold">
           {t("Menu Traiteur", "Catering Menu")}
         </h1>
 
         <Link
           href={`/${locale}`}
-          className="text-sm border px-2 py-1 rounded"
+          className="text-sm border px-3 py-1 rounded"
         >
           ← {t("Retour", "Back")}
         </Link>
