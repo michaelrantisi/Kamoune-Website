@@ -2,44 +2,37 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import menuData from "@/data/menuParticuliers";
 import MenuCard from "@/components/MenuCard";
 
 export default function MenuParticuliersPage() {
-  const params = useParams();
-  const locale = (params?.locale === "en" ? "en" : "fr") as "fr" | "en";
-
-  const [mounted, setMounted] = useState(false);
-
-  // prevent hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
+  const { locale } = useParams<{ locale: "fr" | "en" }>();
   const t = (fr: string, en: string) => (locale === "fr" ? fr : en);
 
   return (
-    <div className="max-w-5xl mx-auto p-6">
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-3xl font-bold">
-          {t("Menu Particuliers", "Individual Menu")}
-        </h1>
-
-        {/* only back button; cart lives in Navbar */}
+    <div className="section py-10">
+      <div className="flex items-center justify-between gap-4 mb-6">
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent mb-1">
+            {t("Notre carte", "Our menu")}
+          </p>
+          <h1 className="font-display text-3xl md:text-4xl font-semibold text-primaryDark">
+            {t("Menu Particuliers", "Individual Menu")}
+          </h1>
+        </div>
         <Link
           href={`/${locale}`}
-          className="text-sm border px-3 py-1 rounded"
+          className="text-xs md:text-sm border border-cardBorder rounded-full px-3 py-1 hover:border-primary hover:text-primaryDark"
         >
-          ← {t("Retour", "Back")}
+          ← {t("Retour à l'accueil", "Back to home")}
         </Link>
       </div>
 
       {menuData.map((section) => (
         <section key={section.category} className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4">{section.category}</h2>
+          <h2 className="text-xl font-semibold text-primaryDark mb-3">
+            {section.category}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {section.items.map((item) => (
               <MenuCard key={item.id} item={item} locale={locale} />

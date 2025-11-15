@@ -2,14 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+}
 
-/* Global resets and brand styles */
 body {
-@apply font-sans bg-white text-gray-800;
+  @apply bg-sand text-slate-800 font-body;
 }
+
+/* Basic link & button styles */
 a {
-@apply text-primary hover:underline;
+  @apply text-primary transition-colors duration-150;
 }
-button {
-@apply cursor-pointer;
+
+a:hover {
+  @apply text-primaryDark;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-5 py-2 rounded-full
+  bg-primary text-white text-sm font-medium shadow-soft
+  hover:bg-primaryDark transition-colors duration-150;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-5 py-2 rounded-full
+  border border-primary text-primary text-sm font-medium
+  hover:bg-primary hover:text-white transition-colors duration-150;
+}
+
+.section {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.card {
+  @apply bg-card border border-cardBorder rounded-2xl shadow-soft p-5;
 }

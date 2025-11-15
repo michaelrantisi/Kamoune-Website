@@ -7,23 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#2D6A4F",      // deep olive green
-          dark: "#1B4332",
-          light: "#D8F3DC",
-        },
-        accent: {
-          red: "#B02A30",          // pomegranate red
-          gold: "#D4A373",
-        },
-        cream: "#F6EEE3",          // warm background
-        ink: "#1F2933",            // dark text
+        primary: "#136f63",      // deep green
+        primaryDark: "#0b3b34",
+        accent: "#b91c1c",       // Palestinian red
+        sand: "#f7f1e5",         // warm beige background
+        card: "#ffffff",
+        cardBorder: "#e2d3c1",
+      },
+      fontFamily: {
+        display: ['"Playfair Display"', "serif"],
+        body: ['"Inter"', "system-ui", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 10px 25px rgba(0,0,0,0.06)",
-      },
-      borderRadius: {
-        xl: "1rem",
+        soft: "0 18px 45px rgba(19, 111, 99, 0.16)",
       },
     },
   },

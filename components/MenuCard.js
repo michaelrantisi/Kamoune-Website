@@ -1,4 +1,5 @@
 "use client";
+
 import { useContext } from "react";
 import { CartContext } from "@/context/CartContext";
 
@@ -10,19 +11,29 @@ export default function MenuCard({ item, locale }) {
   };
 
   return (
-    <div className="border rounded-lg p-4 shadow-sm flex flex-col justify-between">
+    <article className="card flex flex-col justify-between">
       <div>
-        <h3 className="text-xl font-semibold">{item.name}</h3>
-        {item.description && <p className="text-sm text-gray-600 mt-1">{item.description}</p>}
+        <h3 className="font-semibold text-lg text-primaryDark">{item.name}</h3>
+        {item.description && (
+          <p className="text-sm text-slate-600 mt-1">{item.description}</p>
+        )}
       </div>
+
       <div className="flex items-center justify-between mt-4">
-        <span className="font-bold">
-          {item.price !== undefined ? `${item.price} €` : locale === "fr" ? "Sur devis" : "Quote"}
+        <span className="font-bold text-primaryDark">
+          {item.price !== undefined
+            ? `${item.price} €`
+            : locale === "fr"
+            ? "Sur devis"
+            : "On quote"}
         </span>
-        <button className="bg-primary text-white px-3 py-1 rounded" onClick={handleAdd}>
+        <button
+          onClick={handleAdd}
+          className="px-4 py-1.5 rounded-full bg-primary text-white text-xs font-medium hover:bg-primaryDark transition-colors"
+        >
           {locale === "fr" ? "Ajouter" : "Add"}
         </button>
       </div>
-    </div>
+    </article>
   );
 }
