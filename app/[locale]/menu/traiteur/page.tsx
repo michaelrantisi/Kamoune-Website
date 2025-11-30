@@ -1,45 +1,92 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
-import menuData from "@/data/menuTraiteur";
-import MenuCard from "@/components/MenuCard";
+import menuTraiteur, { cateringNote } from "@/data/menuTraiteur";
+
+type Locale = "fr" | "en";
 
 export default function MenuTraiteurPage() {
-  const { locale } = useParams<{ locale: "fr" | "en" }>();
+  const { locale: rawLocale } = useParams<{ locale: Locale }>();
+  const locale: Locale = rawLocale === "en" ? "en" : "fr";
+
   const t = (fr: string, en: string) => (locale === "fr" ? fr : en);
 
   return (
-    <div className="section py-10">
-      <div className="flex items-center justify-between gap-4 mb-6">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-accent mb-1">
-            {t("Pour vos événements", "For your events")}
-          </p>
-          <h1 className="font-display text-3xl md:text-4xl font-semibold text-primaryDark">
-            {t("Menu Traiteur", "Catering Menu")}
-          </h1>
-        </div>
-        <Link
-          href={`/${locale}`}
-          className="text-xs md:text-sm border border-cardBorder rounded-full px-3 py-1 hover:border-primary hover:text-primaryDark"
-        >
-          ← {t("Retour à l'accueil", "Back to home")}
-        </Link>
-      </div>
-
-      {menuData.map((section) => (
-        <section key={section.category} className="mt-8">
-          <h2 className="text-xl font-semibold text-primaryDark mb-3">
-            {section.category}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {section.items.map((item) => (
-              <MenuCard key={item.id} item={item} locale={locale} />
-            ))}
+    <div className="min-h-screen bg-[#f6efe4]">
+      <div className="max-w-5xl mx-auto px-4 py-10">
+        {/* Title + global note */}
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-semibold text-[#4b2a17]">
+              {t("Menu traiteur", "Catering menu")}
+            </h1>
+            <p className="mt-2 text-sm text-[#7a5a3b] italic">
+              {locale === "fr" ? cateringNote.fr : cateringNote.en}
+            </p>
           </div>
-        </section>
-      ))}
+          <Link
+            href={`/${locale}`}
+            className="text-sm border border-[#c9a070] text-[#7a4b28] px-3 py-1 rounded-full hover:bg-[#f1dfc7] transition"
+          >
+            ← {t("Retour à l’accueil", "Back to home")}
+          </Link>
+        </div>
+
+        {/* Catering menus */}
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {menuTraiteur.map((menu) => {
+            const name = locale === "fr" ? menu.name_fr : menu.name_en;
+            const desc =
+              locale === "fr" ? menu.description_fr : menu.description_en;
+            const items = locale === "fr" ? menu.items_fr : menu.items_en;
+
+            return (
+              <article
+                key={menu.id}
+                className="rounded-2xl border border-[#e3c9a3] bg-[#fff7ec] shadow-sm overflow-hidden flex flex-col"
+              >
+                {menu.image && (
+                  <div className="relative h-40 w-full">
+                    <Image
+                      src={menu.image}
+                      alt={name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+
+                <div className="p-4 flex-1 flex flex-col">
+                  <h2 className="text-lg font-semibold text-[#4b2a17]">
+                    {name}
+                  </h2>
+                  <p className="mt-1 text-sm text-[#7a5a3b]">{desc}</p>
+
+                  <ul className="mt-3 space-y-1 text-sm text-[#5c4733] list-disc list-inside">
+                    {items.map((it, idx) => (
+                      <li key={idx}>{it}</li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-4 text-sm font-semibold text-[#7a4b28]">
+                    {menu.price_per_person != null ? (
+                      <>
+                        {locale === "fr"
+                          ? `${menu.price_per_person} € par personne`
+                          : `${menu.price_per_person} € per person`}
+                      </>
+                    ) : (
+                      t("Sur devis", "On request")
+                    )}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
