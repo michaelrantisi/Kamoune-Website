@@ -30,7 +30,7 @@ pass: process.env.SMTP_PASS
 
 const mailToOwner = {
 from: process.env.FROM_EMAIL,
-to: 'michaelrantisi2003@gmail.com',
+to: 'tasawur2023@gmail.com',
 subject: `Nouvelle commande de ${name}`,
 html: `
 <h2>Commande reçue</h2>
