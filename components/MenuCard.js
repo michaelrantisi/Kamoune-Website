@@ -11,30 +11,36 @@ export default function MenuCard({ item, locale }) {
     locale === "fr" ? item.description_fr : item.description_en;
   const note = locale === "fr" ? item.note_fr : item.note_en;
 
-  // We assume the image is /public/<item.id>.jpg
-  const imageSrc = `/${item.id}.jpg`;
+  // 🔴 OLD (wrong):
+  // const imageSrc = `/${item.id}.jpg`;
+
+  // 🟢 NEW: use the image path from menuParticuliers.ts
+  const imageSrc = item.image || "/kamoune-hero.jpg";
 
   const handleAdd = () => {
     addItem({
       id: item.id,
       name,
       price: item.price ?? 0,
+      description,
     });
   };
 
   return (
     <div className="group border rounded-xl p-4 shadow-sm flex flex-col justify-between bg-white/90 hover:shadow-md transition-shadow">
       {/* Image block */}
-      <div className="overflow-hidden rounded-lg mb-3 relative">
-        <Image
-          src={imageSrc}
-          alt={name}
-          width={500}
-          height={320}
-          className="h-40 w-full object-cover transform transition-transform duration-300 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-      </div>
+      {imageSrc && (
+        <div className="overflow-hidden rounded-lg mb-3 relative">
+          <Image
+            src={imageSrc}
+            alt={name}
+            width={500}
+            height={320}
+            className="h-40 w-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+        </div>
+      )}
 
       {/* Text + info */}
       <div className="flex-1 flex flex-col justify-between">
@@ -52,7 +58,7 @@ export default function MenuCard({ item, locale }) {
 
         <div className="flex items-center justify-between mt-4">
           <span className="font-bold text-emerald-900">
-            {item.price !== undefined
+            {item.price !== undefined && item.price !== null
               ? `${item.price} €`
               : locale === "fr"
               ? "Sur devis"
