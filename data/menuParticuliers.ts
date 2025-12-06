@@ -7,8 +7,10 @@ const menuData = [
         id: "avocado-hummus",
         name_fr: "Houmous avocat",
         name_en: "Avocado hummus",
-        description_fr: "Pois chiches, avocat, tahini, citron, piment d’Espelette",
-        description_en: "Chickpeas, avocado, tahini, lemon, Espelette pepper",
+        description_fr:
+          "Pois chiches, avocat, tahini, citron, piment d’Espelette",
+        description_en:
+          "Chickpeas, avocado, tahini, lemon, Espelette pepper",
         price: 7,
         image: "/menu/avocado-hummus.jpg",
       },
@@ -25,8 +27,10 @@ const menuData = [
         id: "hummus",
         name_fr: "Houmous",
         name_en: "Hummus",
-        description_fr: "Pois chiches, tahini, citron, huile d’olive, cumin",
-        description_en: "Chickpeas, tahini, lemon, olive oil, cumin",
+        description_fr:
+          "Pois chiches, tahini, citron, huile d’olive, cumin",
+        description_en:
+          "Chickpeas, tahini, lemon, olive oil, cumin",
         price: 6,
         image: "/menu/hummus.jpg",
       },
@@ -52,8 +56,10 @@ const menuData = [
         id: "caviar-aubergine",
         name_fr: "Caviar d’aubergine",
         name_en: "Eggplant dip",
-        description_fr: "Aubergine fumée, ail, tahini, yaourt, citron",
-        description_en: "Smoked eggplant, garlic, tahini, yogurt, lemon",
+        description_fr:
+          "Aubergine fumée, ail, tahini, yaourt, citron",
+        description_en:
+          "Smoked eggplant, garlic, tahini, yogurt, lemon",
         price: 7,
         image: "/menu/caviar-aubergine.jpg",
       },
@@ -61,8 +67,10 @@ const menuData = [
         id: "mama-ghanouj",
         name_fr: "Mama Ghanouj",
         name_en: "Mama Ghanouj",
-        description_fr: "Aubergine fumée, tahini, menthe, persil, grenade, noix",
-        description_en: "Smoked eggplant, tahini, mint, parsley, pomegranate, walnuts",
+        description_fr:
+          "Aubergine fumée, tahini, menthe, persil, grenade, noix",
+        description_en:
+          "Smoked eggplant, tahini, mint, parsley, pomegranate, walnuts",
         price: 8,
         image: "/menu/mama-ghanouj.jpg",
       },
@@ -70,8 +78,10 @@ const menuData = [
         id: "labneh-zaitoun",
         name_fr: "Labneh zaitoun",
         name_en: "Labneh with olives",
-        description_fr: "Fromage frais égoutté, huile d’olive, olives",
-        description_en: "Strained fresh cheese, olive oil, olives",
+        description_fr:
+          "Fromage frais égoutté, huile d’olive, olives",
+        description_en:
+          "Strained fresh cheese, olive oil, olives",
         price: 7,
         image: "/menu/labneh-zaitoun.jpg",
       },
@@ -79,10 +89,13 @@ const menuData = [
         id: "yalanji",
         name_fr: "Yalanji",
         name_en: "Stuffed vine leaves",
-        description_fr: "Feuilles de vigne farcies au riz, tomates, herbes fraîches",
-        description_en: "Vine leaves stuffed with rice, tomatoes, herbs",
+        description_fr:
+          "Feuilles de vigne farcies au riz, tomates, herbes fraîches",
+        description_en:
+          "Vine leaves stuffed with rice, tomatoes, herbs",
         price: 5,
-        image: "/menu/yalanji.jpg",
+        // 🔴 FIXED: match file name exactly (capital Y)
+        image: "/menu/Yalanji.jpg",
       },
     ],
   },
@@ -95,8 +108,10 @@ const menuData = [
         id: "jerusalem-falafels",
         name_fr: "Falafels de Jérusalem",
         name_en: "Jerusalem falafels",
-        description_fr: "Pois chiches, coriandre, persil, ail, cumin",
-        description_en: "Chickpeas, coriander, parsley, garlic, cumin",
+        description_fr:
+          "Pois chiches, coriandre, persil, ail, cumin",
+        description_en:
+          "Chickpeas, coriander, parsley, garlic, cumin",
         price: 6,
         image: "/menu/jerusalem-falafels.jpg",
       },
@@ -113,8 +128,10 @@ const menuData = [
         id: "red-lentil-soup",
         name_fr: "Soupe de lentilles corail",
         name_en: "Red lentil soup",
-        description_fr: "Lentilles corail, pomme de terre, oignons, cumin",
-        description_en: "Red lentils, potato, onion, cumin",
+        description_fr:
+          "Lentilles corail, pomme de terre, oignons, cumin",
+        description_en:
+          "Red lentils, potato, onion, cumin",
         price: 6,
         image: "/menu/red-lentil-soup.jpg",
       },
@@ -122,8 +139,10 @@ const menuData = [
         id: "kubeh",
         name_fr: "Kebbeh",
         name_en: "Kibbeh",
-        description_fr: "Boulgour farci à la viande hachée",
-        description_en: "Bulgur stuffed with minced meat",
+        description_fr:
+          "Boulgour farci à la viande hachée",
+        description_en:
+          "Bulgur stuffed with minced meat",
         price: 8,
         image: "/menu/Kubeh.jpg",
       },
@@ -131,8 +150,10 @@ const menuData = [
         id: "kamoune-hummus",
         name_fr: "Houmous Kamoune",
         name_en: "Kamoune Hummus",
-        description_fr: "Pois chiches, viande hachée, tahini, citron, huile d’olive",
-        description_en: "Chickpeas, minced meat, tahini, lemon, olive oil",
+        description_fr:
+          "Pois chiches, viande hachée, tahini, citron, huile d’olive",
+        description_en:
+          "Chickpeas, minced meat, tahini, lemon, olive oil",
         price: 8,
         image: "/menu/kamoune-hummus.jpg",
       },
@@ -140,8 +161,10 @@ const menuData = [
         id: "arayes-bel-lahma",
         name_fr: "Arayes bel lahma",
         name_en: "Arayes bel lahma",
-        description_fr: "Pain pita croustillant farci de viande hachée épicée",
-        description_en: "Crispy pita stuffed with spiced minced meat",
+        description_fr:
+          "Pain pita croustillant farci de viande hachée épicée",
+        description_en:
+          "Crispy pita stuffed with spiced minced meat",
         price: 8,
         image: "/menu/arayes-bel-lahma.jpg",
       },
@@ -156,8 +179,10 @@ const menuData = [
         id: "walnut-baklava",
         name_fr: "Baklava aux noix",
         name_en: "Walnut baklava",
-        description_fr: "Feuilletés croustillants garnis de noix parfumées",
-        description_en: "Crispy pastry with fragrant walnuts",
+        description_fr:
+          "Feuilletés croustillants garnis de noix parfumées",
+        description_en:
+          "Crispy pastry with fragrant walnuts",
         price: 5,
         image: "/menu/walnut-baklava.jpg",
       },
@@ -165,8 +190,10 @@ const menuData = [
         id: "halawet-jibn-pistachios",
         name_fr: "Halawet el Jibn aux pistaches",
         name_en: "Halawet el Jibn with pistachios",
-        description_fr: "Rouleaux de pâte au fromage avec crème parfumée",
-        description_en: "Semolina-cheese rolls with orange-blossom cream",
+        description_fr:
+          "Rouleaux de pâte au fromage avec crème parfumée",
+        description_en:
+          "Semolina-cheese rolls with orange-blossom cream",
         price: 5,
         image: "/menu/halawet-jibn-pistachios.jpg",
       },
@@ -174,8 +201,10 @@ const menuData = [
         id: "knafeh-kamoune",
         name_fr: "Knafeh Kamoune",
         name_en: "Kamoune Knafeh",
-        description_fr: "Cheveux d’ange croustillants, crème parfumée",
-        description_en: "Crispy kataifi pastry with scented cream",
+        description_fr:
+          "Cheveux d’ange croustillants, crème parfumée",
+        description_en:
+          "Crispy kataifi pastry with scented cream",
         price: null, // à la commande
         note_fr: "À la commande",
         note_en: "Made to order",
@@ -192,8 +221,10 @@ const menuData = [
         id: "musakhan",
         name_fr: "Moussakhan",
         name_en: "Musakhan",
-        description_fr: "Poulet rôti, oignons caramélisés, sumac, huile d’olive",
-        description_en: "Roasted chicken, caramelized onions, sumac, olive oil",
+        description_fr:
+          "Poulet rôti, oignons caramélisés, sumac, huile d’olive",
+        description_en:
+          "Roasted chicken, caramelized onions, sumac, olive oil",
         price: 14,
         image: "/menu/musakhan.jpg",
       },
@@ -201,26 +232,33 @@ const menuData = [
         id: "maqlouba-teta",
         name_fr: "Maqlouba de Téta",
         name_en: "Teta’s Maqlouba",
-        description_fr: "Riz, aubergine, choux fleur, poulet — plat emblématique",
-        description_en: "Rice, eggplant, cauliflower, chicken — signature dish",
+        description_fr:
+          "Riz, aubergine, choux fleur, poulet — plat emblématique",
+        description_en:
+          "Rice, eggplant, cauliflower, chicken — signature dish",
         price: 14,
-        image: "/menu/maqlouba-teta.jpg", 
+        image: "/menu/maqlouba-teta.jpg",
       },
       {
         id: "moujadara",
         name_fr: "Moujadara caramélisée",
         name_en: "Caramelized Moujadara",
-        description_fr: "Lentilles, riz, oignons caramélisés",
-        description_en: "Lentils, rice, caramelized onions",
+        description_fr:
+          "Lentilles, riz, oignons caramélisés",
+        description_en:
+          "Lentils, rice, caramelized onions",
         price: 13,
-        image: "/menu/moujadara.jpg",
+        // 🔴 FIXED: match file name exactly (capital M)
+        image: "/menu/Moujadara.jpg",
       },
       {
         id: "boulettes-kafta",
         name_fr: "Boulettes de kafta",
         name_en: "Kafta meatballs",
-        description_fr: "Viande hachée, oignons, persil, épices",
-        description_en: "Minced meat with onions, parsley, spices",
+        description_fr:
+          "Viande hachée, oignons, persil, épices",
+        description_en:
+          "Minced meat with onions, parsley, spices",
         price: 14,
         image: "/menu/boulettes-kafta.jpg",
       },
@@ -228,8 +266,10 @@ const menuData = [
         id: "shish-taouk",
         name_fr: "Brochettes de chich taouk",
         name_en: "Shish Taouk",
-        description_fr: "Poulet mariné au yaourt, citron et épices",
-        description_en: "Yogurt-marinated chicken grilled to perfection",
+        description_fr:
+          "Poulet mariné au yaourt, citron et épices",
+        description_en:
+          "Yogurt-marinated chicken grilled to perfection",
         price: 14,
         image: "/menu/shish-taouk.jpg",
       },
@@ -237,8 +277,10 @@ const menuData = [
         id: "chicken-shawarma",
         name_fr: "Shawarma au poulet",
         name_en: "Chicken shawarma",
-        description_fr: "Poulet mariné aux épices, sauce tahini",
-        description_en: "Spiced marinated chicken with tahini sauce",
+        description_fr:
+          "Poulet mariné aux épices, sauce tahini",
+        description_en:
+          "Spiced marinated chicken with tahini sauce",
         price: 14,
         image: "/menu/chicken-shawarma.jpg",
       },
