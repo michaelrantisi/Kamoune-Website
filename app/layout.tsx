@@ -6,6 +6,11 @@ import CartProvider from "@/context/CartContext";
 export const metadata = {
   title: "Kamoune",
   description: "Cuisine palestinienne à Toulouse",
+  icons: {
+    icon: "/favicon.ico",      
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
