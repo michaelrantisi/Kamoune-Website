@@ -11,7 +11,7 @@ const menuData = [
           "Pois chiches, avocat, tahini, citron, piment d’Espelette",
         description_en:
           "Chickpeas, avocado, tahini, lemon, Espelette pepper",
-        price: 7,
+        price: 8,
         image: "/menu/avocado-hummus.jpg",
       },
       {
